@@ -1,0 +1,7 @@
+ud882.txt
+
+**launch python3 web server from local directory:
+    python -m http.server 8080
+
+
+
