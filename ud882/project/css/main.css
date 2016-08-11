@@ -1,3 +1,10 @@
+@import url(http://weloveiconfonts.com/api/?family=zocial);
+
+/* zocial */
+[class*="zocial-"]:before {
+  font-family: 'zocial', sans-serif;
+}
+
 article {
   margin: 0 auto;
   max-width: 50em;
@@ -15,4 +22,36 @@ h1 {
 
 img {
   max-width: 100%;
+}
+
+hr {
+  height: 12px;
+  box-shadow: inset 0 12px 12px -12px rgba(0, 0, 0, 0.5);
+  margin: 0 auto;
+  max-width: 60em;
+}
+
+a:link {
+  color: grey;
+  text-decoration: none;
+}
+
+a:visited {
+  color: silver;
+  text-decoration: none;
+}
+
+a:hover {
+  color: blue;
+  text-decoration: none;
+}
+
+a:active {
+  color: red;
+  text-decoration: none;
+}
+
+#social {
+  text-align: center;
+  font-size: 3em;
 }
