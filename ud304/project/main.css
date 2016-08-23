@@ -1,0 +1,52 @@
+#header {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+#me {
+	text-align: right;
+	margin-left: auto;
+}
+
+h1, #name {
+	font-family: Verdana, Geneva, sans-serif;
+	/*height: 4em;*/
+	/*padding-top: 1em;*/
+	/*padding-bottom: 1em;*/
+	margin-top: 0.5em;
+
+}
+
+h4, #title {
+	font-family: "Lucida Console", Monaco, monospace;
+	height: 3em;
+	font-weight: normal;
+	padding: 0;
+	margin: 0;
+}
+
+#logo {
+	width: auto;
+	height: 8em;
+}
+
+img, #banner {
+	width: 100%;
+	height: auto;
+}
+
+@media only screen and (max-width: 500px) {
+	#header {
+		flex-direction: column;
+	}
+
+	#me {
+		text-align: center;
+		margin: auto;
+	}
+	#logo {
+		margin: auto;
+		width: auto;
+		height: 4em;
+	}
+}
