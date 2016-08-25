@@ -8,18 +8,14 @@
 	margin-left: auto;
 }
 
-h1, #name {
+#name {
 	font-family: Verdana, Geneva, sans-serif;
-	/*height: 4em;*/
-	/*padding-top: 1em;*/
-	/*padding-bottom: 1em;*/
-	margin-top: 0.5em;
-
+	margin-top: 0.1em;
+	margin-bottom: 0.1em;
 }
 
-h4, #title {
+#title {
 	font-family: "Lucida Console", Monaco, monospace;
-	height: 3em;
 	font-weight: normal;
 	padding: 0;
 	margin: 0;
@@ -27,11 +23,20 @@ h4, #title {
 
 #logo {
 	width: auto;
-	height: 8em;
+	height: 4em;
 }
 
-img, #banner {
+#banner img {
 	width: 100%;
+	height: auto;
+}
+
+#showcase {
+	font-family: Verdana, Geneva, sans-serif;
+}
+
+#feature img {
+	width: 33%;
 	height: auto;
 }
 
@@ -47,6 +52,6 @@ img, #banner {
 	#logo {
 		margin: auto;
 		width: auto;
-		height: 4em;
+		height: 2em;
 	}
 }
