@@ -35,14 +35,58 @@
 	font-family: Verdana, Geneva, sans-serif;
 }
 
+#featured {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: flex-end;
+}
+
+#feature {
+	width: 30%;
+	margin-right: 5%;
+	text-align: center;
+}
+
 #feature img {
-	width: 33%;
-	height: auto;
+	width: 60%;
+	vertical-align: center;
+}
+
+#feature:last-of-type {
+	margin-right: 0;
+}
+
+#feature:hover {
+	background-color: grey;
+}
+
+a:link {
+	text-decoration: none;
+	color: black;
+}
+
+a:visited {
+	color: black;
+}
+
+a:hover {
+	color: blue;
+}
+
+a:active {
+	color: red;
+}
+
+#url {
+	font-size: 0.8em;
+	font-family: "Lucida Console", Monaco, monospace;
+	color: blue;
 }
 
 @media only screen and (max-width: 500px) {
 	#header {
 		flex-direction: column;
+
 	}
 
 	#me {
@@ -53,5 +97,25 @@
 		margin: auto;
 		width: auto;
 		height: 2em;
+	}
+
+	#showcase {
+		text-align: center;
+	}
+
+	#featured {
+		flex-direction: column;
+		align-items: center;
+	}
+
+	#feature {
+		width: 80%;
+		margin: 0;
+		padding-bottom: 1em;
+	}
+
+	#feature img {
+		width: 80%;
+		height: auto;
 	}
 }
