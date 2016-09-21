@@ -61,12 +61,22 @@ module.exports = function(grunt) {
       },
     },
 
+    copy: {
+      dev: {
+        files: [{
+          expand: true,
+          src: 'images_src/fixed/*.{gif,jpg,png}',
+          dest: 'images/'
+        }]
+      },
+    },
+
   });
 
   grunt.loadNpmTasks('grunt-responsive-images');
   grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-mkdir');
-  grunt.registerTask('default', ['clean', 'mkdir', 'responsive_images']);
+  grunt.registerTask('default', ['clean', 'mkdir', 'responsive_images', 'copy']);
 
 };
