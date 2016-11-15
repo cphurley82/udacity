@@ -24,7 +24,18 @@
       will-change: transform;
     }
 
-    body.toggled main .box-container .box:nth-child(2n) {
+    main .box-container .box-toggleable {
+      display: inline-block;
+      width: 40px;
+      height: 40px;
+      background: #FFF;
+      box-shadow: 0 1px 1px rgba(0,0,0,0.3);
+      margin: 5px;
+      position: relative;
+      will-change: transform;
+    }
+
+    body.toggled main .box-container .box-toggleable {
       background: #777 !important;
     }
 
@@ -60,7 +71,12 @@
 
     for (var i = 0; i < 3000; i++) {
       var div = document.createElement('div');
-      div.classList.add('box');
+      
+      if (i % 2 === 0) {
+        div.classList.add('box');
+      } else {
+        div.classList.add('box-toggleable');
+      }
       div.index = i;
       container.appendChild(div);
     }
