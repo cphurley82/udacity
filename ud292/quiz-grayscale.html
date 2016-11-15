@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<div>
+  	<input type="file" id="file" />  
+  </div>
+  <div id="image-container">
+    <canvas width="500" height="500"></canvas>
+  </div>
+
+<script type="text/javascript">
+	function handleFileSelect(evt) {
+    var canvasWidth = 500;
+    var canvasHeight = 500;
+    var file = evt.target.files[0];
+    
+    
+    
+    var reader = new FileReader();
+    reader.onload = function(fileObject) {
+      var data = fileObject.target.result;
+      
+      // Create an image object
+      var image = new Image();
+      image.onload = function() {
+        
+        window.imageSrc = this;
+        redrawImage(window.imageSrc);
+      }
+      
+      // Set image data to background image.
+      image.src = data;
+      console.log(fileObject.target.result);
+    };
+    reader.readAsDataURL(file)
+  }	
+
+  function redrawImage(image) {
+    // Get Canvas2DContext
+    var canvas = document.querySelector('canvas');
+    var ctx = canvas.getContext("2d");
+    
+    ctx.drawImage(image, 0, 0, image.width,  image.height,
+                         0, 0, canvas.width, canvas.height);
+
+    var pixels = ctx.getImageData(0, 0, canvas.width, canvas.height);
+
+    console.log(pixels);
+
+    numPixels = canvas.width * canvas.height;
+
+
+    for (var pixelIndex = 0; pixelIndex < numPixels; pixelIndex++) {
+    	var red   = pixels.data[pixelIndex * 4];
+    	var green = pixels.data[pixelIndex * 4 + 1];
+    	var blue  = pixels.data[pixelIndex * 4 + 2];
+    	
+    	var gray = (red + green + blue) / 3;
+    	
+    	pixels.data[pixelIndex * 4] = 0;
+    	pixels.data[pixelIndex * 4 + 1] = 0;
+    	pixels.data[pixelIndex * 4 + 2] = 0;
+    	pixels.data[pixelIndex * 4 + 3] = 255 - gray;
+    }
+
+		console.log(pixels);
+    ctx.putImageData(pixels, 0, 0);
+
+  }
+
+  document.getElementById('file').addEventListener('change', handleFileSelect, 
+  		false);
+</script>
+
+</body>
+</html>

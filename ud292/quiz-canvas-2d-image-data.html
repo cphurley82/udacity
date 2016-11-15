@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+<canvas id="myCanvas" width="200" height="200" style="border:1px solid #000000;">
+</canvas>
+
+<script type="text/javascript">
+
+var canvas = document.getElementById('myCanvas');
+var ctx = canvas.getContext('2d');
+
+var pixels = ctx.getImageData(0, 0, canvas.width, canvas.height);
+console.log(pixels);
+
+var numPixels = canvas.height * canvas.width * 4;
+
+var pixelNum = 0;
+
+for (var pixelIndex = 1; pixelIndex < numPixels; pixelIndex+=4) {
+	if(pixelNum % 10 === 0) {
+		pixels.data[pixelIndex] = 255;
+		pixels.data[pixelIndex+2] = 255;
+	}
+	pixelNum++;
+}
+
+console.log(pixels);
+
+ctx.putImageData(pixels, 0, 0);
+
+</script>
+
+</body>
+</html>

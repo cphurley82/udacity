@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+
+<canvas id="c" width="500" height="500"></canvas>
+
+<script type="text/javascript">
+  var c = document.querySelector('#c');
+  var ctx = c.getContext('2d');
+
+  // ctx.fillRect(100, 100, 100, 100);
+  
+  ctx.strokeRect(50, 50, 100, 100);
+
+  ctx.beginPath();
+  ctx.moveTo(75, 75);
+  ctx.lineTo(125, 125);
+  ctx.lineTo(125, 75);
+  ctx.lineTo(75, 75);
+  ctx.fill();
+  // ctx.stroke();
+
+  ctx.font = '36pt Impact, Charcoal, sans-serif';
+  ctx.strokeStyle = 'black';
+  ctx.fillStyle = 'white';
+  ctx.lineWidth = 3;
+  ctx.strokeText('CANVAS MEMES!', 100, 100);
+  ctx.fillText('CANVAS MEMES!', 100, 100);
+
+
+</script>
+
+</body>
+</html>
