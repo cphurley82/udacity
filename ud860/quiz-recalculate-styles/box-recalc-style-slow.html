@@ -24,18 +24,7 @@
       will-change: transform;
     }
 
-    main .box-container .box-toggleable {
-      display: inline-block;
-      width: 40px;
-      height: 40px;
-      background: #FFF;
-      box-shadow: 0 1px 1px rgba(0,0,0,0.3);
-      margin: 5px;
-      position: relative;
-      will-change: transform;
-    }
-
-    body.toggled main .box-container .box-toggleable {
+    .box.gray {
       background: #777 !important;
     }
 
@@ -71,18 +60,19 @@
 
     for (var i = 0; i < 3000; i++) {
       var div = document.createElement('div');
-      
-      if (i % 2 === 0) {
-        div.classList.add('box');
-      } else {
-        div.classList.add('box-toggleable');
-      }
+      div.classList.add('box');
       div.index = i;
       container.appendChild(div);
     }
 
     button.addEventListener('click', function() {
       document.body.classList.toggle('toggled');
+      console.log('toggling');
+      var boxes = container.querySelector('.box');
+      for (var i = 1; i < boxes.length; i+=2) {
+        boxes[i].classList.toggle('gray', 
+            document.body.classList.contains('toggled'));
+      }
     });
 
     </script>
